@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Compra</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: grey;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: not-allowed;
+            text-align: center;
+        }
+
+        .submit-button.active {
+            background-color: green;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Complete suas informações</h2>
+
+        <label for="name">Seu nome:</label>
+        <input type="text" id="name" placeholder="Digite seu nome">
+
+        <label for="location">Seu local:</label>
+        <input type="text" id="location" placeholder="Digite sua localização">
+
+        <label for="cpf">Seu CPF:</label>
+        <input type="text" id="cpf" placeholder="Digite seu CPF">
+
+        <label for="payment">Comprovante do Pagamento:</label>
+        <input type="file" id="payment">
+
+        <button id="submit" class="submit-button" disabled>Enviar</button>
+    </div>
+
+    <script>
+        // Seleciona os campos e o botão
+        const nameInput = document.getElementById('name');
+        const locationInput = document.getElementById('location');
+        const cpfInput = document.getElementById('cpf');
+        const paymentInput = document.getElementById('payment');
+        const submitButton = document.getElementById('submit');
+
+        // Função para verificar se todos os campos estão preenchidos
+        function checkForm() {
+            if (nameInput.value && locationInput.value && cpfInput.value && paymentInput.files.length > 0) {
+                submitButton.disabled = false;
+                submitButton.classList.add('active');
+            } else {
+                submitButton.disabled = true;
+                submitButton.classList.remove('active');
+            }
+        }
+
+        // Adiciona ouvintes de eventos para os campos
+        nameInput.addEventListener('input', checkForm);
+        locationInput.addEventListener('input', checkForm);
+        cpfInput.addEventListener('input', checkForm);
+        paymentInput.addEventListener('change', checkForm);
+    </script>
+</body>
+</html>

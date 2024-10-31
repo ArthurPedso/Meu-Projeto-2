@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Imagem de Fundo</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./img/D.jpeg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .description {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 24px; /* Aumentando o tamanho das letras */
+            max-width: 400px;
+        }
+
+        .buy-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .buy-button:hover {
+            background-color: #1d8104; /* Efeito ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <div class="description">
+        <h1>Bem-vindo!</h1>
+        <p>O ZMA é um suplemento composto por zinco, magnésio e vitamina B6, conhecido por apoiar a recuperação muscular, melhorar a qualidade do sono e otimizar os níveis hormonais, como a testosterona. Ele é especialmente útil para atletas que buscam melhorar a performance física, aumentar a força e acelerar a regeneração pós-treino.</p>
+        <P>R$90,00</P>
+        <!-- Botão para redirecionar a outra página -->
+        <a href="file:///C:/Users/enavo/OneDrive/%C3%81rea%20de%20Trabalho/meu%20projeto%202!!!/envio.html" class="buy-button">Compre o seu agora!!!</a>
+    </div>
+</body>
+</html>
